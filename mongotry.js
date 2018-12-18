@@ -11,7 +11,7 @@ console.log("connected sucessfully");
 
 const db = client.db("todo");
 
-db.collection("todo1").insertOne(({text: "inserted 2 via program"}), (err, result) => {
+db.collection("todomain").insertOne(({text: "inserted 1 via program", completed: false}), (err, result) => {
     if (err){
         return console.log("error while inserting");        
     }
