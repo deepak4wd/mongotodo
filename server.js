@@ -27,6 +27,17 @@ app.post('/todos', (req, resp) => {
         });
 });
 
+app.get('/todos', (req,resp)=>{
+
+    ToDo.find().then((todos)=>{
+        console.log("read sucessfully");
+        resp.send({todos})
+    }).catch((err)=>{
+        console.log("read failed");
+        resp.status(400).send(err)
+    });
+});
+
 app.listen(3000, ()=>{
     console.log("started on port 3000");
 });
